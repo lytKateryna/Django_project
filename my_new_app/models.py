@@ -53,4 +53,4 @@ related_name='subtasks', help_text='Основная задача')
     created_at: datetime = models.DateTimeField(auto_now_add=True, help_text="Дата и время создания")
 
     def __str__(self):
-        return self.task
+        return self.title
