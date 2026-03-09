@@ -5,12 +5,24 @@ from django.db import models
 
 # Create your models here.
 class Category(models.Model):
-    description: str = models.TextField(max_length=100, verbose_name="Категория выполнения")
     name: str = models.CharField(max_length=50, verbose_name="Название категории")
+    description: str = models.TextField(max_length=100, verbose_name="Категория выполнения")
+
 
     def __str__(self):
         return self.name
 
+
+    class Meta:
+        db_table = 'task_manager_category'
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+        constraints = [
+            models.UniqueConstraint(
+                fields=['name'],
+                name='unique_category'
+            )
+        ]
 
 class Task(models.Model):
     STATUS_CHOICES = [
@@ -33,7 +45,21 @@ class Task(models.Model):
     created_at: datetime = models.DateTimeField(auto_now_add=True, help_text="Дата и время создания")
 
     def __str__(self):
-        return self.title
+        return f"{self.title}"
+
+
+    class Meta:
+        db_table = 'task_manager_task'
+        verbose_name = "Task"
+        verbose_name_plural = "Tasks"
+        constraints = [
+            models.UniqueConstraint(
+                fields=['name'],
+                name='unique_task'
+            )
+        ]
+        ordering = ["-created_at"]
+
 
 
 class SubTask(models.Model):
@@ -54,3 +80,15 @@ related_name='subtasks', help_text='Основная задача')
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        db_table = 'task_manager_subtask'
+        verbose_name = "SubTask"
+        verbose_name_plural = 'SubTasks'
+        constraints = [
+            models.UniqueConstraint(
+                fields=['name'],
+                name='unique_subtask'
+            )
+        ]
+        ordering = ["-created_at"]
