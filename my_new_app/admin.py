@@ -14,11 +14,16 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ['title', 'categories','status', 'deadline']
+    list_display = ['title', 'get_categories','status', 'deadline']
     search_fields = ['title']
     list_filter = ['status', 'categories']
     list_editable = ["status"]
-    list_per_page = 2
+    list_per_page = 10
+    
+    def get_categories(self, obj):
+        return ", ".join([category.name for category in obj.categories.all()])
+    get_categories.short_description = 'Categories'
+
 
 @admin.register(SubTask)
 class SubTaskAdmin(admin.ModelAdmin):
@@ -26,6 +31,6 @@ class SubTaskAdmin(admin.ModelAdmin):
     search_fields = ['title']
     list_filter = ['task', 'status']
     list_editable = ["status"]
-    list_per_page = 2
+    list_per_page = 10
 
 

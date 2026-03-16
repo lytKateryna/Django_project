@@ -54,7 +54,7 @@ class Task(models.Model):
         verbose_name_plural = "Tasks"
         constraints = [
             models.UniqueConstraint(
-                fields=['name'],
+                fields=['title'],
                 name='unique_task'
             )
         ]
@@ -87,7 +87,7 @@ related_name='subtasks', help_text='Основная задача')
         verbose_name_plural = 'SubTasks'
         constraints = [
             models.UniqueConstraint(
-                fields=['name'],
+                fields=['title'],
                 name='unique_subtask'
             )
         ]
