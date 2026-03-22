@@ -17,9 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from my_new_app.views import index, homepage
+from my_new_app.views import tasks
+from my_new_app.views import task_id
+from my_new_app.views import task_statistic
 
 urlpatterns = [
     path('', index),
     path('admin/', admin.site.urls),
     path('page/', homepage),
+    path('tasks/', tasks),
+    path('tasks/<int:task_id>', task_id),
+    path('tasks/statistic/', task_statistic),
 ]
+
