@@ -13,7 +13,7 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data: dict[str, Any]) -> Category:
         category_name = validated_data.get('name')
-        if Category.objects.filter(name=category_name).exists():
+        if Category.objects.filter(name__iexact=category_name).exists():
             raise serializers.ValidationError("Category with this name already exists.")
         return Category.objects.create(**validated_data)
 
@@ -26,3 +26,9 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
         instance.save()
 
         return instance
+"""
+        for attr, value in validated_data.items():  (метод не зависит от название полей)
+            setattr(instance, attr, value)
+            instance.save()
+            return instance
+"""
