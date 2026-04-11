@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'my_new_app.apps.MyNewAppConfig',
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+# REST_FRAMEWORK = {
+#     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+#     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'DEFAULT_PAGINATION_CLASS': 'pagination.MyCustomCursorPagination',
+#     'PAGE_SIZE': 5
+# }
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases

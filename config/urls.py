@@ -16,21 +16,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from my_new_app.views import index, homepage
-from my_new_app.views import tasks
-from my_new_app.views import task_id
-from my_new_app.views import task_statistic
-from my_new_app.views import SubTaskListCreateView
-from my_new_app.views import SubTaskDetailUpdateDeleteView
+from my_new_app.views import (
+    index,
+    homepage,
+    TasksListCreateGenericView,
+    TaskRetrieveUpdateDestroyGenericView,
+    task_statistic,
+    )
+from my_new_app.views import (
+    SubTaskListCreateGenericView,
+SubTaskRetrieveUpdateDestroyGenericView
+)
 
 urlpatterns = [
     path('', index),
     path('admin/', admin.site.urls),
     path('page/', homepage),
-    path('tasks/', tasks),
-    path('tasks/<int:task_id>/', task_id),
-    path('tasks/statistic/', task_statistic),
-    path('subtasks/', SubTaskListCreateView.as_view()),
-    path('subtasks/<int:pk>/', SubTaskDetailUpdateDeleteView.as_view()),
+    path('tasks/', TasksListCreateGenericView.as_view(), name='tasks-list-create'),
+    path('tasks/<int:id>/', TaskRetrieveUpdateDestroyGenericView.as_view(), name='task-detail'),
+    path('tasks/statistic/', task_statistic, name='task-statistic'),
+    path('subtasks/', SubTaskListCreateGenericView.as_view()),
+    path('subtasks/<int:id>/', SubTaskRetrieveUpdateDestroyGenericView.as_view()),
 ]
 
