@@ -1,5 +1,5 @@
-from datetime import datetime
-
+from datetime import datetime, timezone
+from django.utils import timezone
 from django.db import models
 
 
@@ -7,7 +7,8 @@ from django.db import models
 class Category(models.Model):
     name: str = models.CharField(max_length=50, verbose_name="Название категории")
     description: str = models.TextField(max_length=100, verbose_name="Категория выполнения")
-
+    is_deleted = models.BooleanField(default=False, verbose_name="Удалено")
+    deleted_at = models.DateTimeField(null=True, blank=True, verbose_name="Дата удаления")
 
     def __str__(self):
         return self.name
@@ -23,6 +24,11 @@ class Category(models.Model):
                 name='unique_category'
             )
         ]
+    def delete(self, using = None, keep_parents = False):
+        self.is_deleted = True
+        self.deleted_at = timezone.now()
+        self.save()
+
 
 class Task(models.Model):
     STATUS_CHOICES = [

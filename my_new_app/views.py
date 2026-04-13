@@ -3,14 +3,15 @@ from django.db.models import Count
 from django.utils import timezone
 
 from rest_framework import filters
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
+from rest_framework.request import Request
 from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView
 )
 from django_filters.rest_framework import DjangoFilterBackend
-from my_new_app.models import Task, SubTask
+from my_new_app.models import Task, SubTask, Category
 from my_new_app.serializers.task import (
     TaskSerializer,
     TaskCreateSerializer,
@@ -20,8 +21,16 @@ from my_new_app.serializers.subtask import (
     SubTaskSerializer,
     SubTaskCreateSerializer
 )
+from my_new_app.serializers.category import (
+    CategoryCreateSerializer,
+)
 from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.viewsets import (
+    GenericViewSet,
+    ModelViewSet,
+    ReadOnlyModelViewSet
+)
 
 
 # Create your views here.
@@ -35,6 +44,26 @@ def homepage(request):
     return HttpResponse(
         '<h1>My Homepage!!!</h1>'
     )
+
+
+class CategoryViewSet(ModelViewSet):
+    queryset = Category.objects.filter(is_deleted=False)
+    serializer_class = CategoryCreateSerializer
+
+
+    @action(methods=['GET'], detail=False)
+    def get_count_tasks(self, request, *args, **kwargs):
+        queryset = self.get_queryset().annotate(
+            count_tasks=Count('tasks')
+        )
+        serializer = self.get_serializer(queryset, many=True)
+
+        return Response(data={
+            "total_objects": self.get_queryset().count(),
+            "results": serializer.data
+            },
+            status=status.HTTP_200_OK
+        )
 
 
 class TasksListCreateGenericView(ListCreateAPIView):
@@ -126,7 +155,6 @@ class SubTaskListCreateGenericView(ListCreateAPIView):
     filterset_fields = ['status', 'deadline']
     search_fields = ['title', 'description']
     ordering_fields = ['created_at']
-
 
     def get_serializer_class(self):
         if self.request.method == 'POST':
