@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from django.conf.global_settings import LOGGING
 from environ import Env
 
 env = Env()
@@ -129,6 +131,65 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'pagination.MyCustomCursorPagination',
+
+}
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '[{levelname}] | {asctime}   --  {name}: ({message})',
+            'style': '{',
+        },
+        'verbose': {
+            'format': '[{levelname}] | {asctime} | {name} | {module} | {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'INFO',
+            'formatter': 'simple',
+        },
+            'http_file': {
+            'class': 'logging.FileHandler',
+            'level': 'INFO',
+            'formatter': 'verbose',
+            'filename': os.path.join(BASE_DIR,'http_logs.log'),
+            'encoding': 'utf-8',
+        },
+            'db_file': {
+            'class': 'logging.FileHandler',
+            'level': 'DEBUG',
+            'formatter': 'verbose',
+            'filename': os.path.join(BASE_DIR,'db_logs.log'),
+            'encoding': 'utf-8',
+        },
+    },
+            'loggers': {
+            'django.server': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+            },
+            'django.request': {
+            'handlers': ['http_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+            'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'db_file'],
+            'propagate': False,
+        },
+    },
+}
 
 
 # Internationalization

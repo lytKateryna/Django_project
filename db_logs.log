@@ -1,0 +1,92 @@
+[DEBUG] | 2026-04-15 21:39:06,777 | django.db.backends | utils | (0.234) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-04-15 21:39:06,980 | django.db.backends | utils | (0.203) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-04-15 21:39:07,031 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-04-15 21:39:07,084 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-04-15 21:40:16,013 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-04-15 21:40:16,069 | django.db.backends | utils | (0.046) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-04-15 21:40:16,120 | django.db.backends | utils | (0.063) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-04-15 21:40:16,174 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-04-15 21:40:39,975 | django.db.backends | utils | (0.313) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-04-15 21:40:40,252 | django.db.backends | utils | (0.266) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-04-15 21:40:40,525 | django.db.backends | utils | (0.281) SELECT `task_manager_category`.`id`, `task_manager_category`.`name`, `task_manager_category`.`description`, `task_manager_category`.`is_deleted`, `task_manager_category`.`deleted_at` FROM `task_manager_category` WHERE (`task_manager_category`.`is_deleted` = 0 AND `task_manager_category`.`id` = 2) LIMIT 21; args=(False, 2); alias=default
+[DEBUG] | 2026-04-15 21:41:29,023 | django.db.backends | utils | (0.219) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-04-15 21:41:29,129 | django.db.backends | utils | (0.094) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-04-15 21:41:29,205 | django.db.backends | utils | (0.078) SELECT 1 AS `a` FROM `task_manager_task` WHERE `task_manager_task`.`title` = 'написать пост' LIMIT 1; args=(1, 'написать пост'); alias=default
+[DEBUG] | 2026-04-15 21:41:29,259 | django.db.backends | utils | (0.047) SELECT 1 AS `a` FROM `task_manager_task` WHERE (EXTRACT(DAY FROM `task_manager_task`.`created_at`) = 15 AND EXTRACT(MONTH FROM `task_manager_task`.`created_at`) = 4 AND `task_manager_task`.`created_at` BETWEEN '2026-01-01 00:00:00' AND '2026-12-31 23:59:59.999999' AND `task_manager_task`.`title` = 'написать пост') LIMIT 1; args=(1, 15, 4, '2026-01-01 00:00:00', '2026-12-31 23:59:59.999999', 'написать пост'); alias=default
+[DEBUG] | 2026-04-15 21:41:29,319 | django.db.backends | utils | (0.046) INSERT INTO `task_manager_task` (`title`, `description`, `status`, `deadline`, `created_at`) VALUES ('написать пост', 'написать пост', 'new', '2026-04-29 02:00:00', '2026-04-15 19:41:29.259534'); args=['написать пост', 'написать пост', 'new', '2026-04-29 02:00:00', '2026-04-15 19:41:29.259534']; alias=default
+[DEBUG] | 2026-04-15 21:43:16,100 | django.db.backends | utils | (0.032) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-04-15 21:43:16,131 | django.db.backends | utils | (0.016) SELECT 1 AS `a` FROM `task_manager_task` WHERE `task_manager_task`.`title` = 'написать статью' LIMIT 1; args=(1, 'написать статью'); alias=default
+[DEBUG] | 2026-04-15 21:43:16,168 | django.db.backends | utils | (0.031) SELECT 1 AS `a` FROM `task_manager_task` WHERE (EXTRACT(DAY FROM `task_manager_task`.`created_at`) = 15 AND EXTRACT(MONTH FROM `task_manager_task`.`created_at`) = 4 AND `task_manager_task`.`created_at` BETWEEN '2026-01-01 00:00:00' AND '2026-12-31 23:59:59.999999' AND `task_manager_task`.`title` = 'написать статью') LIMIT 1; args=(1, 15, 4, '2026-01-01 00:00:00', '2026-12-31 23:59:59.999999', 'написать статью'); alias=default
+[DEBUG] | 2026-04-15 21:43:16,211 | django.db.backends | utils | (0.047) INSERT INTO `task_manager_task` (`title`, `description`, `status`, `deadline`, `created_at`) VALUES ('написать статью', 'написать статью для сайта', 'new', '2026-04-29 02:00:00', '2026-04-15 19:43:16.169143'); args=['написать статью', 'написать статью для сайта', 'new', '2026-04-29 02:00:00', '2026-04-15 19:43:16.169143']; alias=default
+[DEBUG] | 2026-04-15 21:45:26,282 | django.db.backends | utils | (0.156) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-04-15 21:45:26,500 | django.db.backends | utils | (0.219) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-04-15 21:45:26,904 | django.db.backends | utils | (0.406) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-04-15 21:45:27,281 | django.db.backends | utils | (0.375) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-04-15 21:51:30,053 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-04-15 21:51:30,102 | django.db.backends | utils | (0.062) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-04-15 21:51:30,134 | django.db.backends | utils | (0.032) SELECT 1 AS `a` FROM `task_manager_task` WHERE `task_manager_task`.`title` = 'Task' LIMIT 1; args=(1, 'Task'); alias=default
+[DEBUG] | 2026-04-15 21:51:30,202 | django.db.backends | utils | (0.047) SELECT 1 AS `a` FROM `task_manager_task` WHERE (EXTRACT(DAY FROM `task_manager_task`.`created_at`) = 15 AND EXTRACT(MONTH FROM `task_manager_task`.`created_at`) = 4 AND `task_manager_task`.`created_at` BETWEEN '2026-01-01 00:00:00' AND '2026-12-31 23:59:59.999999' AND `task_manager_task`.`title` = 'Task') LIMIT 1; args=(1, 15, 4, '2026-01-01 00:00:00', '2026-12-31 23:59:59.999999', 'Task'); alias=default
+[DEBUG] | 2026-04-15 21:51:30,245 | django.db.backends | utils | (0.047) INSERT INTO `task_manager_task` (`title`, `description`, `status`, `deadline`, `created_at`) VALUES ('Task', 'description', 'new', '2026-04-29 02:20:00', '2026-04-15 19:51:30.203081'); args=['Task', 'description', 'new', '2026-04-29 02:20:00', '2026-04-15 19:51:30.203081']; alias=default
