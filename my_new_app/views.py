@@ -10,6 +10,7 @@ from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView
 )
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 from my_new_app.models import Task, SubTask, Category
 from my_new_app.serializers.task import (
@@ -49,7 +50,7 @@ def homepage(request):
 class CategoryViewSet(ModelViewSet):
     queryset = Category.objects.filter(is_deleted=False)
     serializer_class = CategoryCreateSerializer
-
+    permission_classes = [AllowAny]
 
     @action(methods=['GET'], detail=False)
     def get_count_tasks(self, request, *args, **kwargs):
@@ -68,6 +69,7 @@ class CategoryViewSet(ModelViewSet):
 
 class TasksListCreateGenericView(ListCreateAPIView):
     serializer_class = TaskSerializer
+    permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
 
     filterset_fields = ['status', 'deadline']
@@ -154,7 +156,7 @@ class SubTaskListCreateGenericView(ListCreateAPIView):
 
     filterset_fields = ['status', 'deadline']
     search_fields = ['title', 'description']
-    ordering_fields = ['created_at']
+    ordering_fields = ['-created_at']
 
     def get_serializer_class(self):
         if self.request.method == 'POST':

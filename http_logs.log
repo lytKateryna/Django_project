@@ -1,0 +1,11 @@
+[WARNING] | 2026-04-16 09:40:32,102 | django.request | log | Not Found: /favicon.ico
+[WARNING] | 2026-04-22 19:24:08,058 | django.request | log | Not Found: /favicon.ico
+[WARNING] | 2026-04-22 20:49:41,050 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-22 20:52:43,166 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-22 20:53:49,726 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-22 21:03:14,098 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-22 21:04:46,779 | django.request | log | Not Found: /auth-token/
+[WARNING] | 2026-04-22 21:05:21,931 | django.request | log | Not Found: /auth-token/
+[WARNING] | 2026-04-22 21:06:00,695 | django.request | log | Not Found: /auth-token/
+[WARNING] | 2026-04-22 21:20:13,054 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-22 21:21:50,534 | django.request | log | Unauthorized: /tasks/

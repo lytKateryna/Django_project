@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from django.conf.global_settings import LOGGING
 from environ import Env
+from datetime import timedelta
 
 env = Env()
 
@@ -47,6 +48,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
 ]
+#3rd-party apps
+'rest_framework',
+'rest_framework_simplejwt',
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -134,9 +140,22 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'pagination.MyCustomCursorPagination',
-
+     'DEFAULT_AUTHENTICATION_CLASSES': (
+         'rest_framework_simplejwt.authentication.JWTAuthentication',
+     ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
 
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': False,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+}
 
 LOGGING = {
     'version': 1,

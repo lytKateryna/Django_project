@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import DefaultRouter
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 from my_new_app.views import (
     index,
     homepage,
@@ -37,6 +41,8 @@ router.register('categories', CategoryViewSet, basename='category')
 urlpatterns = [
     path('', index),
     path('admin/', admin.site.urls),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('page/', homepage),
     path('tasks/', TasksListCreateGenericView.as_view(), name='tasks-list-create'),
     path('tasks/<int:id>/', TaskRetrieveUpdateDestroyGenericView.as_view(), name='task-detail'),
