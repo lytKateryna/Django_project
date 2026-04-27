@@ -1,6 +1,8 @@
-from datetime import datetime, timezone
+from datetime import datetime
+from django.conf import settings
 from django.utils import timezone
 from django.db import models
+
 
 
 # Create your models here.
@@ -49,6 +51,10 @@ class Task(models.Model):
     deadline: datetime = models.DateTimeField(help_text="Дата и время дедлайн")
 
     created_at: datetime = models.DateTimeField(auto_now_add=True, help_text="Дата и время создания")
+
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="tasks",
+    verbose_name="Владелец задачи", null=True,
+    blank=True)
 
     def __str__(self):
         return f"{self.title}"

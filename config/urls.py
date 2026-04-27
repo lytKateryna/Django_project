@@ -15,17 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
+)
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+    SpectacularRedocView,
 )
 from my_new_app.views import (
     index,
     homepage,
     TasksListCreateGenericView,
     TaskRetrieveUpdateDestroyGenericView,
+    UserTasksListView,
     task_statistic,
     CategoryViewSet
     )
@@ -36,7 +42,7 @@ SubTaskRetrieveUpdateDestroyGenericView
 
 router = DefaultRouter()
 router.register('categories', CategoryViewSet, basename='category')
-
+router.register('user-tasks', UserTasksListView, basename='user-tasks')
 
 urlpatterns = [
     path('', index),
@@ -49,6 +55,11 @@ urlpatterns = [
     path('tasks/statistic/', task_statistic, name='task-statistic'),
     path('subtasks/', SubTaskListCreateGenericView.as_view()),
     path('subtasks/<int:id>/', SubTaskRetrieveUpdateDestroyGenericView.as_view()),
-]
 
+    # API documentation
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/schema/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+]
 urlpatterns += router.urls

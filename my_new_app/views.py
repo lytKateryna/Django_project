@@ -10,6 +10,7 @@ from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView
 )
+from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 from my_new_app.models import Task, SubTask, Category
@@ -25,6 +26,7 @@ from my_new_app.serializers.subtask import (
 from my_new_app.serializers.category import (
     CategoryCreateSerializer,
 )
+from my_new_app.permissions import IsOwnerOrReadOnly
 from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.viewsets import (
@@ -62,20 +64,29 @@ class CategoryViewSet(ModelViewSet):
         return Response(data={
             "total_objects": self.get_queryset().count(),
             "results": serializer.data
-            },
+        },
             status=status.HTTP_200_OK
         )
 
 
-class TasksListCreateGenericView(ListCreateAPIView):
+class UserTasksListView(ReadOnlyModelViewSet):
+
     serializer_class = TaskSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+
+    def get_queryset(self):
+        return Task.objects.filter(owner=self.request.user)
+
+
+class TasksListCreateGenericView(ListCreateAPIView):
+    serializer_class = TaskCreateSerializer
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
 
-    filterset_fields = ['status', 'deadline']
-    search_fields = ['title', 'description']
+    filterset_fields = ['status', 'deadline', 'id']
+    search_fields = ['title', 'id']
     ordering_fields = ['created_at']
-    ordering = ['created_at']
+    ordering = ['-created_at']
 
     def get_serializer_class(self):
         if self.request.method == 'POST':
@@ -83,7 +94,7 @@ class TasksListCreateGenericView(ListCreateAPIView):
         return TaskSerializer
 
     def get_queryset(self):
-        tasks = Task.objects.all()
+        tasks = Task.objects.filter(owner=self.request.user)
         day = self.request.query_params.get('day')
         if day:
             day = day.strip().lower()
@@ -103,10 +114,16 @@ class TasksListCreateGenericView(ListCreateAPIView):
 
         return tasks
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class TaskRetrieveUpdateDestroyGenericView(RetrieveUpdateDestroyAPIView):
-    queryset = Task.objects.all()
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     lookup_field = 'id'
+
+    def get_queryset(self):
+        return Task.objects.filter(owner=self.request.user)
 
     def get_serializer_class(self):
         if self.request.method in ['PUT', 'PATCH']:
@@ -148,7 +165,7 @@ class SubTaskPagination(PageNumberPagination):
 
 
 class SubTaskListCreateGenericView(ListCreateAPIView):
-    queryset = SubTask.objects.all()
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     serializer_class = SubTaskSerializer
     pagination_class = SubTaskPagination
 
@@ -157,16 +174,34 @@ class SubTaskListCreateGenericView(ListCreateAPIView):
     filterset_fields = ['status', 'deadline']
     search_fields = ['title', 'description']
     ordering_fields = ['-created_at']
+    ordering = ['-created_at']
 
     def get_serializer_class(self):
         if self.request.method == 'POST':
             return SubTaskCreateSerializer
         return SubTaskSerializer
 
+    def get_queryset(self):
+        return SubTask.objects.filter(task__owner=self.request.user)
+
+    def perform_create(self, serializer):
+        task = serializer.validated_data.get('task')
+
+        if task.owner != self.request.user:
+            raise PermissionDenied("Нельзя создать подзадачу для чужой задачи.")
+
+        serializer.save()
+
 
 class SubTaskRetrieveUpdateDestroyGenericView(RetrieveUpdateDestroyAPIView):
-    queryset = SubTask.objects.all()
+
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+
     lookup_field = 'id'
+
+    def get_queryset(self):
+        return SubTask.objects.filter(task__owner=self.request.user)
+
 
     def get_serializer_class(self):
         if self.request.method in ['PUT', 'PATCH']:
