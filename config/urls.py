@@ -26,19 +26,30 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
     SpectacularRedocView,
 )
-from my_new_app.views import (
+from my_new_app.views.user import (
     index,
-    homepage,
-    TasksListCreateGenericView,
-    TaskRetrieveUpdateDestroyGenericView,
-    UserTasksListView,
-    task_statistic,
+    homepage, LogoutUser,
+)
+from my_new_app.views.category import (
     CategoryViewSet
-    )
-from my_new_app.views import (
+)
+from my_new_app.views.task import (
+task_statistic,
+UserTasksListView,
+TasksListCreateGenericView,
+TaskRetrieveUpdateDestroyGenericView
+
+)
+from my_new_app.views.subtask import (
     SubTaskListCreateGenericView,
 SubTaskRetrieveUpdateDestroyGenericView
 )
+
+from my_new_app.views.user import (
+    RegisterView,
+    UserLogin
+)
+
 
 router = DefaultRouter()
 router.register('categories', CategoryViewSet, basename='category')
@@ -46,13 +57,26 @@ router.register('user-tasks', UserTasksListView, basename='user-tasks')
 
 urlpatterns = [
     path('', index),
+    path('page/', homepage),
+
+    #Token
     path('admin/', admin.site.urls),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('page/', homepage),
+
+    # custom auth
+    path('auth-login/', UserLogin.as_view()),
+    path('auth-logout/', LogoutUser.as_view()),
+
+    # User registration
+    path('register/', RegisterView.as_view(), name='register'),
+
+    #Task
     path('tasks/', TasksListCreateGenericView.as_view(), name='tasks-list-create'),
     path('tasks/<int:id>/', TaskRetrieveUpdateDestroyGenericView.as_view(), name='task-detail'),
     path('tasks/statistic/', task_statistic, name='task-statistic'),
+
+    #SubTask
     path('subtasks/', SubTaskListCreateGenericView.as_view()),
     path('subtasks/<int:id>/', SubTaskRetrieveUpdateDestroyGenericView.as_view()),
 
@@ -61,5 +85,7 @@ urlpatterns = [
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/schema/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger'),
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+
+
 ]
 urlpatterns += router.urls

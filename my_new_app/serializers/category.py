@@ -3,7 +3,7 @@ from rest_framework import serializers
 from my_new_app.models import Category
 from typing import Any
 
-from my_new_app.serializers import TaskSerializer
+
 
 
 class CategoryCreateSerializer(serializers.ModelSerializer):

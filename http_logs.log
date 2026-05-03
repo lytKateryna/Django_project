@@ -649,3 +649,81 @@ Traceback (most recent call last):
     raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
 django.template.exceptions.TemplateDoesNotExist: drf_spectacular/swagger_ui.html
 [WARNING] | 2026-04-27 12:17:33,124 | django.request | log | Unauthorized: /user-tasks/
+[WARNING] | 2026-04-28 11:11:00,782 | django.request | log | Not Found: /favicon.ico
+[WARNING] | 2026-04-28 11:11:18,214 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-28 11:11:18,791 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-28 11:11:42,322 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-28 11:12:00,572 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-28 11:26:05,050 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-04-28 11:26:55,190 | django.request | log | Unauthorized: /tasks/33/
+[WARNING] | 2026-04-28 12:26:57,020 | django.request | log | Not Found: /api/register/
+[WARNING] | 2026-04-28 12:27:35,777 | django.request | log | Not Found: /api/register/
+[WARNING] | 2026-04-28 12:27:57,687 | django.request | log | Method Not Allowed: /register/
+[ERROR] | 2026-04-28 12:31:55,067 | django.request | log | Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\my_new_app\views\user.py", line 34, in post
+    set_jwt_cookies(response, user)
+  File "C:\Users\megas\PycharmProjects\Django_project\my_new_app\utils.py", line 21, in set_jwt_cookies
+    response.set_cookie(
+TypeError: HttpResponseBase.set_cookie() got an unexpected keyword argument 'httpOnly'
+[WARNING] | 2026-04-28 12:38:13,479 | django.request | log | Bad Request: /register/
+[ERROR] | 2026-04-28 12:38:40,981 | django.request | log | Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\megas\PycharmProjects\Django_project\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\megas\PycharmProjects\Django_project\my_new_app\views\user.py", line 34, in post
+    set_jwt_cookies(response, user)
+  File "C:\Users\megas\PycharmProjects\Django_project\my_new_app\utils.py", line 21, in set_jwt_cookies
+    response.set_cookie(
+TypeError: HttpResponseBase.set_cookie() got an unexpected keyword argument 'httpOnly'
+[WARNING] | 2026-04-28 12:41:16,829 | django.request | log | Bad Request: /register/
+[WARNING] | 2026-04-29 16:02:36,839 | django.request | log | Unauthorized: /auth-login/
+[WARNING] | 2026-04-29 16:07:45,816 | django.request | log | Unauthorized: /auth-login/
+[WARNING] | 2026-05-03 22:38:46,210 | django.request | log | Unauthorized: /user-tasks/
+[WARNING] | 2026-05-03 22:39:39,683 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-05-03 23:11:33,454 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-05-03 23:13:05,396 | django.request | log | Unauthorized: /tasks/
+[WARNING] | 2026-05-03 23:26:35,489 | django.request | log | Method Not Allowed: /auth-login/
+[WARNING] | 2026-05-03 23:27:22,599 | django.request | log | Unauthorized: /tasks/

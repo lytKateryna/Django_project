@@ -4,8 +4,33 @@ from django.utils import timezone
 from django.db import models
 
 
-
 # Create your models here.
+class User(models.Model):
+    username: str = models.CharField(
+        max_length=30,
+        unique=True,
+        verbose_name="Название пользователя"
+    )
+
+    email: str = models.EmailField(
+        unique=True,
+        verbose_name="Email пользователя"
+    )
+
+    password: str = models.CharField(
+        max_length=128,
+        verbose_name="Пароль пользователя"
+    )
+
+    def __str__(self):
+        return self.username
+
+    class Meta:
+        db_table = 'task_manager_user'
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
+
+
 class Category(models.Model):
     name: str = models.CharField(max_length=50, verbose_name="Название категории")
     description: str = models.TextField(max_length=100, verbose_name="Категория выполнения")
@@ -14,7 +39,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
 
     class Meta:
         db_table = 'task_manager_category'
@@ -26,7 +50,8 @@ class Category(models.Model):
                 name='unique_category'
             )
         ]
-    def delete(self, using = None, keep_parents = False):
+
+    def delete(self, using=None, keep_parents=False):
         self.is_deleted = True
         self.deleted_at = timezone.now()
         self.save()
@@ -53,12 +78,11 @@ class Task(models.Model):
     created_at: datetime = models.DateTimeField(auto_now_add=True, help_text="Дата и время создания")
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="tasks",
-    verbose_name="Владелец задачи", null=True,
-    blank=True)
+                              verbose_name="Владелец задачи", null=True,
+                              blank=True)
 
     def __str__(self):
         return f"{self.title}"
-
 
     class Meta:
         db_table = 'task_manager_task'
@@ -73,7 +97,6 @@ class Task(models.Model):
         ordering = ["-created_at"]
 
 
-
 class SubTask(models.Model):
     STATUS_CHOICES = [
         ("new", "New"),
@@ -85,7 +108,7 @@ class SubTask(models.Model):
     title: str = models.CharField(max_length=50, unique_for_date="created_at", verbose_name="Название подзадачи")
     description: str = models.TextField(max_length=100, verbose_name="Описание подзадачи")
     task: str = models.ForeignKey(Task, on_delete=models.CASCADE,
-related_name='subtasks', help_text='Основная задача')
+                                  related_name='subtasks', help_text='Основная задача')
     status: str = models.CharField(max_length=20, choices=STATUS_CHOICES, default="new", verbose_name="Статус задачи")
     deadline: datetime = models.DateTimeField(help_text="Дата и время дедлайн")
     created_at: datetime = models.DateTimeField(auto_now_add=True, help_text="Дата и время создания")
