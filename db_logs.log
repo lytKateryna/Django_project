@@ -4162,3 +4162,841 @@
             WHERE table_schema = DATABASE()
             ; args=None; alias=default
 [DEBUG] | 2026-05-03 23:35:48,808 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 12:59:50,743 | django.db.backends | utils | (0.641) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 12:59:50,938 | django.db.backends | utils | (0.187) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 12:59:50,981 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 12:59:51,073 | django.db.backends | utils | (0.078) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 13:02:26,008 | django.db.backends | utils | (0.688) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 13:02:26,317 | django.db.backends | utils | (0.297) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 13:02:26,463 | django.db.backends | utils | (0.141) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'user' LIMIT 21; args=('user',); alias=default
+[DEBUG] | 2026-05-10 13:04:36,055 | django.db.backends | utils | (0.500) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 13:04:36,438 | django.db.backends | utils | (0.390) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 13:04:36,594 | django.db.backends | utils | (0.157) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 13:04:37,079 | django.db.backends | utils | (0.484) SELECT 1 AS `a` FROM `task_manager_task` WHERE `task_manager_task`.`title` = 'New Signal Task' LIMIT 1; args=(1, 'New Signal Task'); alias=default
+[DEBUG] | 2026-05-10 13:20:19,860 | django.db.backends | utils | (0.469) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 13:20:19,987 | django.db.backends | utils | (0.125) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 13:20:20,059 | django.db.backends | utils | (0.078) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 13:20:20,094 | django.db.backends | utils | (0.032) SELECT 1 AS `a` FROM `task_manager_task` WHERE `task_manager_task`.`title` = 'New Signal Task' LIMIT 1; args=(1, 'New Signal Task'); alias=default
+[DEBUG] | 2026-05-10 13:22:03,903 | django.db.backends | utils | (0.250) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 13:22:04,143 | django.db.backends | utils | (0.234) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 13:22:04,336 | django.db.backends | utils | (0.188) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 13:22:04,458 | django.db.backends | utils | (0.125) SELECT 1 AS `a` FROM `task_manager_task` WHERE `task_manager_task`.`title` = 'New Signal Task' LIMIT 1; args=(1, 'New Signal Task'); alias=default
+[DEBUG] | 2026-05-10 13:22:04,551 | django.db.backends | utils | (0.063) INSERT INTO `task_manager_task` (`title`, `description`, `status`, `deadline`, `created_at`, `owner_id`) VALUES ('New Signal Task', 'Signal Task', 'new', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1); args=['New Signal Task', 'Signal Task', 'new', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1]; alias=default
+[DEBUG] | 2026-05-10 13:26:28,654 | django.db.backends | utils | (0.078) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 13:26:28,919 | django.db.backends | utils | (0.266) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 13:26:29,006 | django.db.backends | utils | (0.078) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 13:26:29,339 | django.db.backends | utils | (0.344) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 13:26:29,747 | django.db.backends | utils | (0.406) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 13:26:30,140 | django.db.backends | utils | (0.390) SELECT 1 AS `a` FROM `task_manager_task` WHERE (`task_manager_task`.`title` = 'New Signal Task' AND NOT (`task_manager_task`.`id` = 34)) LIMIT 1; args=(1, 'New Signal Task', 34); alias=default
+[DEBUG] | 2026-05-10 13:26:30,211 | django.db.backends | utils | (0.063) UPDATE `task_manager_task` SET `title` = 'New Signal Task', `description` = 'Signal Task', `status` = 'new', `deadline` = '2026-05-15 18:30:00', `created_at` = '2026-05-10 11:22:04.478302', `owner_id` = 1 WHERE `task_manager_task`.`id` = 34; args=('New Signal Task', 'Signal Task', 'new', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1, 34); alias=default
+[DEBUG] | 2026-05-10 16:29:38,782 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:29:38,824 | django.db.backends | utils | (0.047) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 16:29:38,884 | django.db.backends | utils | (0.062) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:29:38,933 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 16:30:39,946 | django.db.backends | utils | (0.031) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:30:39,986 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 16:30:40,034 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:30:40,077 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 16:31:06,476 | django.db.backends | utils | (0.032) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:31:06,519 | django.db.backends | utils | (0.046) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 16:31:06,553 | django.db.backends | utils | (0.032) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:31:06,593 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 16:51:37,836 | django.db.backends | utils | (0.063) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:51:37,870 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 16:51:37,922 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:51:37,973 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 16:59:58,379 | django.db.backends | utils | (0.031) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:59:58,414 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 16:59:58,457 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 16:59:58,503 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:05:25,186 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:05:25,226 | django.db.backends | utils | (0.032) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:05:25,270 | django.db.backends | utils | (0.046) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:05:25,315 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:06:02,033 | django.db.backends | utils | (0.031) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:06:02,065 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:06:02,105 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:06:02,146 | django.db.backends | utils | (0.031) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:09:42,551 | django.db.backends | utils | (0.032) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:09:42,587 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:09:42,636 | django.db.backends | utils | (0.046) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:09:42,679 | django.db.backends | utils | (0.032) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:16:38,695 | django.db.backends | utils | (0.031) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:16:38,738 | django.db.backends | utils | (0.047) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:16:38,808 | django.db.backends | utils | (0.078) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:16:38,854 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:16:57,373 | django.db.backends | utils | (0.031) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:16:57,406 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:16:57,473 | django.db.backends | utils | (0.063) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:16:57,516 | django.db.backends | utils | (0.046) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:17:16,347 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:17:16,390 | django.db.backends | utils | (0.046) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:17:16,442 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:17:16,482 | django.db.backends | utils | (0.031) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:17:56,147 | django.db.backends | utils | (0.031) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:17:56,195 | django.db.backends | utils | (0.047) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:17:56,232 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:17:56,270 | django.db.backends | utils | (0.031) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:18:35,973 | django.db.backends | utils | (0.032) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:18:36,015 | django.db.backends | utils | (0.046) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:18:36,071 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:18:36,120 | django.db.backends | utils | (0.047) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:25:16,229 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:25:16,261 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:25:16,333 | django.db.backends | utils | (0.063) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:25:16,375 | django.db.backends | utils | (0.031) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:25:54,806 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:25:54,858 | django.db.backends | utils | (0.047) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:25:54,919 | django.db.backends | utils | (0.063) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 17:25:54,957 | django.db.backends | utils | (0.031) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 17:25:55,000 | django.db.backends | utils | (0.047) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 17:25:55,039 | django.db.backends | utils | (0.031) SELECT 1 AS `a` FROM `task_manager_task` WHERE (`task_manager_task`.`title` = 'New Signals Task' AND NOT (`task_manager_task`.`id` = 34)) LIMIT 1; args=(1, 'New Signals Task', 34); alias=default
+[DEBUG] | 2026-05-10 17:25:55,090 | django.db.backends | utils | (0.047) SELECT `task_manager_task`.`id`, `task_manager_task`.`title` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 17:25:55,130 | django.db.backends | utils | (0.031) UPDATE `task_manager_task` SET `title` = 'New Signals Task', `description` = 'Signal Task', `status` = 'new', `deadline` = '2026-05-15 18:30:00', `created_at` = '2026-05-10 11:22:04.478302', `owner_id` = 1 WHERE `task_manager_task`.`id` = 34; args=('New Signals Task', 'Signal Task', 'new', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1, 34); alias=default
+[DEBUG] | 2026-05-10 17:27:22,421 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:27:22,460 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:27:22,514 | django.db.backends | utils | (0.062) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 17:27:22,553 | django.db.backends | utils | (0.032) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 17:27:22,592 | django.db.backends | utils | (0.047) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 17:27:22,628 | django.db.backends | utils | (0.031) SELECT 1 AS `a` FROM `task_manager_task` WHERE (`task_manager_task`.`title` = 'New Signals Task(wichtigen Aufgaben)' AND NOT (`task_manager_task`.`id` = 34)) LIMIT 1; args=(1, 'New Signals Task(wichtigen Aufgaben)', 34); alias=default
+[DEBUG] | 2026-05-10 17:27:22,664 | django.db.backends | utils | (0.031) SELECT `task_manager_task`.`id`, `task_manager_task`.`title` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 17:27:22,703 | django.db.backends | utils | (0.047) UPDATE `task_manager_task` SET `title` = 'New Signals Task(wichtigen Aufgaben)', `description` = 'Signal Task', `status` = 'new', `deadline` = '2026-05-15 18:30:00', `created_at` = '2026-05-10 11:22:04.478302', `owner_id` = 1 WHERE `task_manager_task`.`id` = 34; args=('New Signals Task(wichtigen Aufgaben)', 'Signal Task', 'new', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1, 34); alias=default
+[DEBUG] | 2026-05-10 17:33:20,904 | django.db.backends | utils | (0.062) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:33:20,942 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:33:20,997 | django.db.backends | utils | (0.063) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 17:33:21,038 | django.db.backends | utils | (0.031) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 17:33:21,082 | django.db.backends | utils | (0.047) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 17:33:21,138 | django.db.backends | utils | (0.062) SELECT 1 AS `a` FROM `task_manager_task` WHERE (`task_manager_task`.`title` = 'New Signals Task(wichtigen Aufgaben)' AND NOT (`task_manager_task`.`id` = 34)) LIMIT 1; args=(1, 'New Signals Task(wichtigen Aufgaben)', 34); alias=default
+[DEBUG] | 2026-05-10 17:33:21,177 | django.db.backends | utils | (0.032) SELECT `task_manager_task`.`id`, `task_manager_task`.`title` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 17:33:21,212 | django.db.backends | utils | (0.031) UPDATE `task_manager_task` SET `title` = 'New Signals Task(wichtigen Aufgaben)', `description` = 'Signal Task', `status` = 'new', `deadline` = '2026-05-15 18:30:00', `created_at` = '2026-05-10 11:22:04.478302', `owner_id` = 1 WHERE `task_manager_task`.`id` = 34; args=('New Signals Task(wichtigen Aufgaben)', 'Signal Task', 'new', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1, 34); alias=default
+[DEBUG] | 2026-05-10 17:36:07,847 | django.db.backends | utils | (0.032) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:36:07,878 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:36:07,929 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:36:07,973 | django.db.backends | utils | (0.032) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:37:12,514 | django.db.backends | utils | (0.046) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:37:12,546 | django.db.backends | utils | (0.032) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:37:12,598 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:37:12,638 | django.db.backends | utils | (0.046) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:45:20,475 | django.db.backends | utils | (0.204) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:45:20,516 | django.db.backends | utils | (0.046) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:45:20,843 | django.db.backends | utils | (0.329) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:45:20,989 | django.db.backends | utils | (0.140) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:48:11,210 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:48:11,252 | django.db.backends | utils | (0.047) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:48:11,301 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:48:11,344 | django.db.backends | utils | (0.032) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:49:18,181 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:49:18,223 | django.db.backends | utils | (0.032) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:49:18,288 | django.db.backends | utils | (0.062) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:49:18,328 | django.db.backends | utils | (0.031) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:50:00,970 | django.db.backends | utils | (0.172) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:50:01,102 | django.db.backends | utils | (0.125) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:50:01,433 | django.db.backends | utils | (0.343) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:50:01,590 | django.db.backends | utils | (0.157) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:51:27,176 | django.db.backends | utils | (0.297) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:51:27,348 | django.db.backends | utils | (0.172) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:51:27,648 | django.db.backends | utils | (0.296) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:51:27,926 | django.db.backends | utils | (0.266) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 17:53:16,434 | django.db.backends | utils | (0.109) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:53:16,489 | django.db.backends | utils | (0.047) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 17:53:16,558 | django.db.backends | utils | (0.078) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 17:53:16,620 | django.db.backends | utils | (0.063) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:04:00,350 | django.db.backends | utils | (0.032) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:04:00,383 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:04:00,439 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:04:00,477 | django.db.backends | utils | (0.032) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:13:14,412 | django.db.backends | utils | (0.172) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:13:14,475 | django.db.backends | utils | (0.047) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:13:14,525 | django.db.backends | utils | (0.062) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:13:14,641 | django.db.backends | utils | (0.109) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:13:28,431 | django.db.backends | utils | (0.312) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:13:28,638 | django.db.backends | utils | (0.203) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:13:29,044 | django.db.backends | utils | (0.407) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:13:29,095 | django.db.backends | utils | (0.032) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`owner_id` = 1 ORDER BY `task_manager_task`.`created_at` DESC LIMIT 6; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:13:29,147 | django.db.backends | utils | (0.031) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:13:29,188 | django.db.backends | utils | (0.031) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:13:29,225 | django.db.backends | utils | (0.032) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:13:29,266 | django.db.backends | utils | (0.031) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:13:29,309 | django.db.backends | utils | (0.047) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:14:39,363 | django.db.backends | utils | (0.375) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:14:39,595 | django.db.backends | utils | (0.235) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:14:39,806 | django.db.backends | utils | (0.218) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:14:52,154 | django.db.backends | utils | (0.203) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:14:52,730 | django.db.backends | utils | (0.578) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:15:03,543 | django.db.backends | utils | (0.047) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:15:03,591 | django.db.backends | utils | (0.047) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:15:03,638 | django.db.backends | utils | (0.046) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:15:03,677 | django.db.backends | utils | (0.032) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:16:26,878 | django.db.backends | utils | (0.313) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:16:27,197 | django.db.backends | utils | (0.328) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:16:27,443 | django.db.backends | utils | (0.234) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:16:27,778 | django.db.backends | utils | (0.344) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:16:27,819 | django.db.backends | utils | (0.031) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:16:27,858 | django.db.backends | utils | (0.031) SELECT 1 AS `a` FROM `task_manager_task` WHERE (`task_manager_task`.`title` = 'New Signals Task(wichtigen Aufgaben)' AND NOT (`task_manager_task`.`id` = 34)) LIMIT 1; args=(1, 'New Signals Task(wichtigen Aufgaben)', 34); alias=default
+[DEBUG] | 2026-05-10 18:16:27,897 | django.db.backends | utils | (0.031) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 18:17:00,497 | django.db.backends | utils | (0.422) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:17:00,804 | django.db.backends | utils | (0.297) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:17:00,949 | django.db.backends | utils | (0.141) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:17:01,360 | django.db.backends | utils | (0.406) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:17:01,414 | django.db.backends | utils | (0.047) SELECT 1 AS `a` FROM `task_manager_task` WHERE (`task_manager_task`.`title` = 'New Signals Task(wichtigen Aufgaben)' AND NOT (`task_manager_task`.`id` = 34)) LIMIT 1; args=(1, 'New Signals Task(wichtigen Aufgaben)', 34); alias=default
+[DEBUG] | 2026-05-10 18:17:01,599 | django.db.backends | utils | (0.172) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 18:17:51,389 | django.db.backends | utils | (0.203) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:17:51,598 | django.db.backends | utils | (0.204) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:17:51,957 | django.db.backends | utils | (0.359) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:17:52,093 | django.db.backends | utils | (0.141) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:17:52,208 | django.db.backends | utils | (0.109) SELECT 1 AS `a` FROM `task_manager_task` WHERE (`task_manager_task`.`title` = 'New Signals Task(wichtigen Aufgaben)' AND NOT (`task_manager_task`.`id` = 34)) LIMIT 1; args=(1, 'New Signals Task(wichtigen Aufgaben)', 34); alias=default
+[DEBUG] | 2026-05-10 18:17:52,621 | django.db.backends | utils | (0.422) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 18:20:36,766 | django.db.backends | utils | (0.187) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:20:37,379 | django.db.backends | utils | (0.610) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:20:37,528 | django.db.backends | utils | (0.156) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:20:37,890 | django.db.backends | utils | (0.359) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:20:38,402 | django.db.backends | utils | (0.516) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:20:49,264 | django.db.backends | utils | (0.203) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:20:49,471 | django.db.backends | utils | (0.204) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:20:49,679 | django.db.backends | utils | (0.203) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:20:50,084 | django.db.backends | utils | (0.406) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:20:50,588 | django.db.backends | utils | (0.516) SELECT 1 AS `a` FROM `task_manager_task` WHERE (`task_manager_task`.`title` = 'New Signals Task(wichtigen Aufgaben)' AND NOT (`task_manager_task`.`id` = 34)) LIMIT 1; args=(1, 'New Signals Task(wichtigen Aufgaben)', 34); alias=default
+[DEBUG] | 2026-05-10 18:20:50,814 | django.db.backends | utils | (0.218) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 18:21:32,469 | django.db.backends | utils | (0.407) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:21:32,526 | django.db.backends | utils | (0.062) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:21:32,995 | django.db.backends | utils | (0.469) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:21:33,812 | django.db.backends | utils | (0.812) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:21:34,077 | django.db.backends | utils | (0.266) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 18:24:05,554 | django.db.backends | utils | (0.328) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:24:05,869 | django.db.backends | utils | (0.328) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:24:06,170 | django.db.backends | utils | (0.297) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:24:06,381 | django.db.backends | utils | (0.203) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:29:42,470 | django.db.backends | utils | (0.407) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:29:42,886 | django.db.backends | utils | (0.421) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:29:43,168 | django.db.backends | utils | (0.282) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:29:43,384 | django.db.backends | utils | (0.203) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:30:40,767 | django.db.backends | utils | (0.046) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:30:41,033 | django.db.backends | utils | (0.266) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:30:41,085 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:30:41,133 | django.db.backends | utils | (0.031) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:31:07,778 | django.db.backends | utils | (0.562) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:31:07,849 | django.db.backends | utils | (0.063) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:31:08,060 | django.db.backends | utils | (0.218) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:31:08,600 | django.db.backends | utils | (0.532) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:31:30,929 | django.db.backends | utils | (0.063) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:31:31,339 | django.db.backends | utils | (0.422) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:31:31,551 | django.db.backends | utils | (0.203) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:31:31,783 | django.db.backends | utils | (0.234) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:31:31,953 | django.db.backends | utils | (0.172) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:31:31,995 | django.db.backends | utils | (0.047) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 18:31:32,043 | django.db.backends | utils | (0.047) UPDATE `task_manager_task` SET `title` = 'New Signals Task(wichtigen Aufgaben)', `description` = 'Signal Task', `status` = 'pending', `deadline` = '2026-05-15 18:30:00', `created_at` = '2026-05-10 11:22:04.478302', `owner_id` = 1 WHERE `task_manager_task`.`id` = 34; args=('New Signals Task(wichtigen Aufgaben)', 'Signal Task', 'pending', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1, 34); alias=default
+[DEBUG] | 2026-05-10 18:33:58,451 | django.db.backends | utils | (0.047) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:33:58,494 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:33:58,541 | django.db.backends | utils | (0.047) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:33:58,586 | django.db.backends | utils | (0.031) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:34:07,017 | django.db.backends | utils | (0.203) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:34:07,261 | django.db.backends | utils | (0.250) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:34:07,333 | django.db.backends | utils | (0.063) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:34:07,506 | django.db.backends | utils | (0.172) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:34:07,569 | django.db.backends | utils | (0.062) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:34:16,489 | django.db.backends | utils | (0.187) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:34:16,783 | django.db.backends | utils | (0.297) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:34:17,233 | django.db.backends | utils | (0.453) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:34:17,687 | django.db.backends | utils | (0.453) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:34:17,860 | django.db.backends | utils | (0.172) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 18:34:18,309 | django.db.backends | utils | (0.453) UPDATE `task_manager_task` SET `title` = 'New Signals Task(wichtigen Aufgaben)', `description` = 'Signal Task', `status` = 'done', `deadline` = '2026-05-15 18:30:00', `created_at` = '2026-05-10 11:22:04.478302', `owner_id` = 1 WHERE `task_manager_task`.`id` = 34; args=('New Signals Task(wichtigen Aufgaben)', 'Signal Task', 'done', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1, 34); alias=default
+[DEBUG] | 2026-05-10 18:36:26,291 | django.db.backends | utils | (0.078) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:36:26,427 | django.db.backends | utils | (0.125) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:36:26,729 | django.db.backends | utils | (0.312) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:36:27,079 | django.db.backends | utils | (0.344) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:36:40,384 | django.db.backends | utils | (0.140) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:36:40,652 | django.db.backends | utils | (0.266) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:36:40,754 | django.db.backends | utils | (0.094) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:36:41,063 | django.db.backends | utils | (0.312) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:36:41,271 | django.db.backends | utils | (0.203) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:36:41,416 | django.db.backends | utils | (0.157) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 18:36:41,676 | django.db.backends | utils | (0.250) UPDATE `task_manager_task` SET `title` = 'New Signals Task(wichtigen Aufgaben)', `description` = 'Signal Task', `status` = 'blocked', `deadline` = '2026-05-15 18:30:00', `created_at` = '2026-05-10 11:22:04.478302', `owner_id` = 1 WHERE `task_manager_task`.`id` = 34; args=('New Signals Task(wichtigen Aufgaben)', 'Signal Task', 'blocked', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1, 34); alias=default
+[DEBUG] | 2026-05-10 18:49:19,131 | django.db.backends | utils | (0.031) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:49:19,165 | django.db.backends | utils | (0.047) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:49:19,212 | django.db.backends | utils | (0.031) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:49:19,265 | django.db.backends | utils | (0.046) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] | 2026-05-10 18:49:41,698 | django.db.backends | utils | (0.031) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 18:49:41,734 | django.db.backends | utils | (0.031) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 18:49:41,786 | django.db.backends | utils | (0.047) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:49:41,827 | django.db.backends | utils | (0.047) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE (`task_manager_task`.`owner_id` = 1 AND `task_manager_task`.`id` = 34) LIMIT 21; args=(1, 34); alias=default
+[DEBUG] | 2026-05-10 18:49:41,869 | django.db.backends | utils | (0.047) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] | 2026-05-10 18:49:41,908 | django.db.backends | utils | (0.031) SELECT `task_manager_task`.`id`, `task_manager_task`.`title`, `task_manager_task`.`description`, `task_manager_task`.`status`, `task_manager_task`.`deadline`, `task_manager_task`.`created_at`, `task_manager_task`.`owner_id` FROM `task_manager_task` WHERE `task_manager_task`.`id` = 34 LIMIT 21; args=(34,); alias=default
+[DEBUG] | 2026-05-10 18:49:41,956 | django.db.backends | utils | (0.047) UPDATE `task_manager_task` SET `title` = 'New Signals Task(wichtigen Aufgaben)', `description` = 'Signal Task', `status` = 'pending', `deadline` = '2026-05-15 18:30:00', `created_at` = '2026-05-10 11:22:04.478302', `owner_id` = 1 WHERE `task_manager_task`.`id` = 34; args=('New Signals Task(wichtigen Aufgaben)', 'Signal Task', 'pending', '2026-05-15 18:30:00', '2026-05-10 11:22:04.478302', 1, 34); alias=default
+[DEBUG] | 2026-05-10 19:14:36,763 | django.db.backends | utils | (0.109) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 19:14:36,799 | django.db.backends | utils | (0.032) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] | 2026-05-10 19:14:36,833 | django.db.backends | utils | (0.031) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] | 2026-05-10 19:14:36,957 | django.db.backends | utils | (0.125) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default

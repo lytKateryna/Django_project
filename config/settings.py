@@ -65,7 +65,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'my_new_app.middlewares.JWTMiddleware',
 ]
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'lyt.kateryna@gmail.com'
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
